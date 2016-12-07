@@ -37,7 +37,7 @@ func HttpSend(url string, body []byte) bool {
 	}
 
 	rq, _ := http.NewRequest("POST", url, bytes.NewBuffer(body))
-	rq.Header.Set("Context-Type", "application/json")
+	rq.Header.Set("Content-Type", "application/json")
 
 	rsp, err := hc.Do(rq)
 	if err != nil {
